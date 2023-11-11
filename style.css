@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(21, 91%, 17%);
+  --clr-primary-2: hsl(21, 84%, 25%);
+  --clr-primary-3: hsl(21, 81%, 29%);
+  --clr-primary-4: hsl(21, 77%, 34%);
+  /* primary/main color */
+  --clr-primary-5: hsl(21, 62%, 45%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(21, 57%, 50%);
+  --clr-primary-7: hsl(21, 65%, 59%);
+  --clr-primary-8: hsl(21, 80%, 74%);
+  --clr-primary-9: hsl(21, 94%, 87%);
+  --clr-primary-10: hsl(21, 100%, 94%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: #102a42;
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: rgb(122, 224, 130);
+  --clr-black: #222;
+
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+/* 
+=======
+Grocery Bud
+=======
+*/
+.section{
+  width: 90vw;
+  max-width: 500px;
+  margin: 5rem auto;
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--dark-shadow);
+  padding: 2rem;
+  text-align: center;
+}
+
+.alert{
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  margin-bottom: 0.45rem;
+  padding: 0.12rem;
+}
+.alert-success{
+  color: var(--clr-green-dark);
+  background: #cbf7cf8f;
+}
+.alert-danger{
+  color: var(--clr-red-dark);
+  background: #facfceaf;
+}
+.section h3{
+  margin-bottom: 1.15rem;
+  font-size: 1.5rem;
+  color: #dbb652cb;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+}
+.grocery-input{
+  width: 320px;
+  background: #f5edd8af;
+  border-color: transparent;
+  padding: 0.25rem 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  font-size: 0.875rem;
+  margin-right: -0.18rem;
+}
+.submit-btn{
+  border-color: transparent;
+  background: #dbb652cb;
+  padding: 0.25rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;  
+  color: var(--clr-white);
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  letter-spacing: var(--spacing);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.submit-btn:hover{
+  background: #a7710eb4;
+}
+.grocery-container{
+  display: none;
+}
+.show-container{
+  display: inline-block;
+}
+.grocery-list{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+}
+.grocery-item{
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  grid-row: 1rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.15rem 0;
+  border-radius: var(--radius);
+}
+.grocery-item:hover{
+  background: #f0e3be9f;
+}
+.grocery-item .title{
+  text-align: start;
+  text-transform: capitalize;
+  letter-spacing: 1.5px;
+  font-size: 0.875rem;
+  color: var(--clr-grey-3);
+  font-weight: 500;
+}
+.edit-btn,
+.delete-btn{
+  cursor: pointer;
+  border-color: transparent;
+  background: transparent;
+  font-size: 0.85rem;
+  margin: 0 0.15rem;
+  transition: var(--transition);
+}
+.edit-btn{
+  color: var(--clr-green-light);
+}
+.edit-btn:hover{
+  color: var(--clr-green-dark);
+}
+.delete-btn{
+  color: var(--clr-red-light);
+}
+.delete-btn:hover{
+  color: var(--clr-red-dark);
+}
+.clear-btn{
+  background: transparent;
+  border-color: transparent;
+  font-size: 1rem;
+  color: var(--clr-red-light);
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+.clear-btn:hover{
+  color: var(--clr-red-dark);
+}
